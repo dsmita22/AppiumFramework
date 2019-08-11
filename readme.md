@@ -1,3 +1,6 @@
+### Build Status
+[![Build Status](https://dev.azure.com/dsmita22/TestAutomation/_apis/build/status/dsmita22.AppiumFramework?branchName=master)](https://dev.azure.com/dsmita22/TestAutomation/_build/latest?definitionId=2&branchName=master)
+
 # Let start with Appium Test
 
 ### Steps to start

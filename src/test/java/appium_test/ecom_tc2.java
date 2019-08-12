@@ -3,12 +3,15 @@ package appium_test;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.springframework.util.Assert;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
+
+import org.junit.Test;
+
 
 public class ecom_tc2 extends ecom_base {
     public static void main(String[] args)  throws MalformedURLException {
@@ -27,13 +30,14 @@ public class ecom_tc2 extends ecom_base {
         {
             String text=driver.findElements(By.id("com.androidsample.generalstore:id/productName")).get(i).getText();
 
-            if(text.equalsIgnoreCase("Jordan 6 Rings"))
+            if(text.equalsIgnoreCase("Air Jordan 9 Retro"))
             {
                 driver.findElements(By.id("com.androidsample.generalstore:id/productAddCart")).get(i).click();
                 break;
             }
         }
         driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
-
+        String cartpagetext = (driver.findElement(By.id("com.androidsample.generalstore:id/productName")).getText());
+        Assert.assertEquals("Air Jordan 9 Retro",cartpagetext);
     }
 }
